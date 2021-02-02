@@ -7,7 +7,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
         script.newPage()
         script.setPagePauseLength(2000)
         script.addLineToCurrentPage("I am living in new zealand", story.TextSpeed.Normal)
-        script.addLineToCurrentPage("I am living in africa", story.TextSpeed.Normal)
+        script.addLineToCurrentPage(". I am living in south", story.TextSpeed.Normal)
+        script.addLineToCurrentPage(" africa. I love BBQ and ", story.TextSpeed.Normal)
+        script.addLineToCurrentPage("juice.", story.TextSpeed.Normal)
         story.printScript(script, 80, 60, 0)
     } else if (otherSprite == Story2) {
     	
