@@ -3,7 +3,12 @@ namespace SpriteKind {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSprite) {
     if (otherSprite == Story1 && controller.A.isPressed()) {
-        story.printText("I never have anything on my page but I have a thing on my page.", 0, 0)
+        script = story.createEmptyScript()
+        script.newPage()
+        script.setPagePauseLength(2000)
+        script.addLineToCurrentPage("I am living in new zealand", story.TextSpeed.Normal)
+        script.addLineToCurrentPage("I am living in africa", story.TextSpeed.Normal)
+        story.printScript(script, 80, 60, 0)
     } else if (otherSprite == Story2) {
     	
     } else if (false) {
@@ -12,6 +17,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
     	
     }
 })
+let script: story.Script = null
 let Story2: Sprite = null
 let Story1: Sprite = null
 scene.setBackgroundColor(10)
