@@ -1,23 +1,20 @@
-scene.setBackgroundColor(1)
-let mouse = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . f f . . . . . . . 
-    . . . . . . . f f . . . . . . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . . . f f . . . . . . . 
-    . . . . . . . f f . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Projectile)
-controller.moveSprite(mouse, 100, 100)
+namespace SpriteKind {
+    export const Story = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSprite) {
+    if (otherSprite == Story1 && controller.A.isPressed()) {
+        story.printText("I never have anything on my page but I have a thing on my page.", 0, 0)
+    } else if (otherSprite == Story2) {
+    	
+    } else if (false) {
+    	
+    } else {
+    	
+    }
+})
+let Story2: Sprite = null
+let Story1: Sprite = null
+scene.setBackgroundColor(10)
 let option_list = [
 img`
     11111771111177111117711117717771
@@ -156,39 +153,104 @@ img`
     44414144414444141111444414444444
     `,
 img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    11111133111111133111113311131331
+    13333333333133333133313313331331
+    13333333333133333133313313331111
+    13333333333133333133313313333331
+    13333333333133333133313313333331
+    11111133333133333133313313333331
+    33333133333133333133313313331331
+    33333133333133333133313313331331
+    33333133333133333133313313331331
+    11111133333133333111113313331111
+    33333333333333333333333333333333
+    33333333333333333333333333333333
+    33333333333333333333333333333333
+    33333333333333333333333333333333
+    11111113333333333333333333333333
+    13333333333333333333333333333333
+    13333333333333333333333333333333
+    11111111333333333333333333333333
+    33333331333333333333333333333333
+    33333331333333333333333333333333
+    11111111333333333333333333333333
+    33333333333333333333333333333333
+    33333313333333333333333333333333
+    11113333311313111313333333333331
+    13331313113333131311131113113131
+    13331313133313131313131313133111
+    13331313133313131313131313133331
+    13331313133313131313131313133331
+    13331313133313131313131313133331
+    13331313133313131313131313131331
+    13331313113313131313131113131331
+    11113313311313111313133313131111
     `,
 img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    11111ff11111ff1111ff1111ff1ffff1
+    1ffffffff1ffff1ff1ff1fffff1ffff1
+    1ffffffff1ffff1ff1ff1fffff111111
+    11111ffff1ffff1ff1ff1ffffffffff1
+    ffff1ffff1ffff1ff1ff1ffffffffff1
+    ffff1ffff1ffff1ff1ff1fffff1ffff1
+    11111ffff1ffff1111ff1fffff1ffff1
+    ffffffffffffffffffffffffff111111
+    ffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    11111fffffffffffffffffffffffffff
+    1fffffffffffffffffffffffffffffff
+    1fffffffffffffffffffffffffffffff
+    11111fffffffffffffffffffffffffff
+    1fff1fffffffffffffffffffffffffff
+    1fff1fffffffffffffffffffffffffff
+    11111fffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffff
+    111ff111f11ff1f1f1111fffffffffff
+    1ff1f1f1f1f1f1f1f1ffffffffffffff
+    1ff1f1f1f1f1f111f1ffffffffffffff
+    1111f1f1f111fff1f1111fffffffffff
+    1ff1f1f1f1f1fff1ffff1fffffffffff
+    1ff1f1f1f1f1fff1ffff1fffffffffff
+    1ff1f1f1f1f1f1f1ffff1fffffffffff
+    1ff1f111f1f1f1f1ffff1fffffffffff
+    111ffff1f111f111f1111fffffffffff
     `
 ]
+Story1 = sprites.create(option_list[0], SpriteKind.Story)
+Story2 = sprites.create(option_list[1], SpriteKind.Story)
+let Story3 = sprites.create(option_list[2], SpriteKind.Story)
+let Story4 = sprites.create(option_list[3], SpriteKind.Story)
+let Story5 = sprites.create(option_list[4], SpriteKind.Story)
+let Story6 = sprites.create(option_list[5], SpriteKind.Story)
+Story1.setPosition(16, 16)
+Story2.setPosition(49, 16)
+Story3.setPosition(82, 16)
+Story4.setPosition(16, 49)
+Story5.setPosition(49, 49)
+Story6.setPosition(82, 49)
+let mouse = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . f f . . . . . . . 
+    . . . . . . . f f . . . . . . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . f f f f f f . . . . . 
+    . . . . . . . f f . . . . . . . 
+    . . . . . . . f f . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+controller.moveSprite(mouse, 100, 100)
+mouse.setPosition(55, 91)
+mouse.setStayInScreen(true)
