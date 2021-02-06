@@ -1,6 +1,14 @@
 namespace SpriteKind {
     export const Story = SpriteKind.create()
 }
+function writeStroy (text: string) {
+    info.setScore(text.length)
+    script2 = story.createEmptyScript()
+    for (let index = 0; index <= 2; index++) {
+        script2.addLineToCurrentPage(text.substr(index * 23, 23), story.TextSpeed.Normal)
+    }
+    story.printScript(script2, 80, 60, 0)
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSprite) {
     if (otherSprite == Story1 && controller.A.isPressed()) {
         script = story.createEmptyScript()
@@ -20,6 +28,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
     }
 })
 let script: story.Script = null
+let script2: story.Script = null
 let Story2: Sprite = null
 let Story1: Sprite = null
 scene.setBackgroundColor(10)
@@ -262,3 +271,4 @@ let mouse = sprites.create(img`
 controller.moveSprite(mouse, 100, 100)
 mouse.setPosition(55, 91)
 mouse.setStayInScreen(true)
+writeStroy("I live in New Zealand. I live in South Africa. I love BBQ and juice.")
