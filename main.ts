@@ -2,24 +2,22 @@ namespace SpriteKind {
     export const Story = SpriteKind.create()
 }
 function writeStroy (text: string) {
-    info.setScore(text.length)
+    info.setScore(Math.ceil(text.length / 23))
     script2 = story.createEmptyScript()
-    for (let index = 0; index <= 2; index++) {
+    script2.setPagePauseLength(2000)
+    for (let index = 0; index <= text.length / 23; index++) {
+        if (index % 13 == 0) {
+            script2.setPagePauseLength(2000)
+            script2.newPage()
+        }
         script2.addLineToCurrentPage(text.substr(index * 23, 23), story.TextSpeed.Normal)
     }
     story.printScript(script2, 80, 60, 0)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSprite) {
     if (otherSprite == Story1 && controller.A.isPressed()) {
-        script = story.createEmptyScript()
-        script.newPage()
-        script.setPagePauseLength(2000)
-        script.addLineToCurrentPage("I am living in new zealand", story.TextSpeed.Normal)
-        script.addLineToCurrentPage(". I am living in south", story.TextSpeed.Normal)
-        script.addLineToCurrentPage(" africa. I love BBQ and ", story.TextSpeed.Normal)
-        script.addLineToCurrentPage("juice.", story.TextSpeed.Normal)
-        story.printScript(script, 80, 60, 0)
-    } else if (otherSprite == Story2) {
+        writeStroy("once apon a time like a really long ago a peaceful people lived happily on planet talagron.they used a rare mineral xelantium to protect their planet.all the monsters came to the planet and stealed all the known xelantium.now planet talagron was poor.then planet earth made more xelantium to planet talagron.they fought all the monsters. now planet talagron was strong.THE END.")
+    } else if (otherSprite == Story2 && controller.A.isPressed()) {
     	
     } else if (false) {
     	
@@ -27,7 +25,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
     	
     }
 })
-let script: story.Script = null
 let script2: story.Script = null
 let Story2: Sprite = null
 let Story1: Sprite = null
@@ -271,4 +268,3 @@ let mouse = sprites.create(img`
 controller.moveSprite(mouse, 100, 100)
 mouse.setPosition(55, 91)
 mouse.setStayInScreen(true)
-writeStroy("I live in New Zealand. I live in South Africa. I love BBQ and juice.")
