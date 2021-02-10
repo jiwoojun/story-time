@@ -18,14 +18,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
     if (otherSprite == Story1 && controller.A.isPressed()) {
         writeStroy("once apon a time like a really long ago a peaceful people lived happily on planet talagron.they used a rare mineral xelantium to protect their planet.all the monsters came to the planet and stealed all the known xelantium.now planet talagron was poor.then planet earth made more xelantium to planet talagron.they fought all the monsters. now planet talagron was strong.THE END.")
     } else if (otherSprite == Story2 && controller.A.isPressed()) {
-    	
-    } else if (false) {
-    	
+        writeStroy("I will tell you about countries.there is 199 in total.each country has a special city called capital.countries are in continents.the continents are asia,europe,africa,oceania,north america and south america.there is also 3 more continents that are not continents.they are balkans,caribbean and centeral america.THE END.")
+    } else if (otherSprite == Story3 && controller.A.isPressed()) {
+        writeStroy("kind is inportant.kind is good.")
     } else {
     	
     }
 })
 let script2: story.Script = null
+let Story3: Sprite = null
 let Story2: Sprite = null
 let Story1: Sprite = null
 scene.setBackgroundColor(10)
@@ -237,7 +238,7 @@ img`
 ]
 Story1 = sprites.create(option_list[0], SpriteKind.Story)
 Story2 = sprites.create(option_list[1], SpriteKind.Story)
-let Story3 = sprites.create(option_list[2], SpriteKind.Story)
+Story3 = sprites.create(option_list[2], SpriteKind.Story)
 let Story4 = sprites.create(option_list[3], SpriteKind.Story)
 let Story5 = sprites.create(option_list[4], SpriteKind.Story)
 let Story6 = sprites.create(option_list[5], SpriteKind.Story)
@@ -268,3 +269,35 @@ let mouse = sprites.create(img`
 controller.moveSprite(mouse, 100, 100)
 mouse.setPosition(55, 91)
 mouse.setStayInScreen(true)
+scene.setBackgroundImage(img`
+    dddddddddddddddddddddddddddddddddddddddd
+    dddddddddddddddddddddddddddddddddddddddd
+    dddddddd11111d11111dd1111d1ddddddd1dd1dd
+    dddddddd1ddddddd1dddd1dd1d1111dddd1dd1dd
+    dddddddd1ddddddd1dddd1dd1d1ddd1ddd1dd1dd
+    dddddddd11111ddd1dddd1dd1d1dddd1dd1111dd
+    dddddddddddd1ddd1dddd1111d1dddddddddd1dd
+    dddddddddddd1ddd1ddddddddd1dddddddddd1dd
+    dddddddd11111ddd1dddddeedd1dddddddddd1dd
+    ddddddddddddddddddddde11ed1dddddddd1d1dd
+    ddddddddddddddddddeee111edddddddddd111dd
+    ddddddddeeeeeeeee2111111eddddddddddddddd
+    ddddddde1111fff112111111eddddddddddddddd
+    ddddddde1ffffff1121ff1f1eddddddddddddddd
+    ddddddde111111ff12111111eddddddddddddddd
+    ddddddde1ff11ff1121ffff1eddddddddddddddd
+    ddddddde1111111112111111eddddddddddddddd
+    ddddddde1ffff1ff121fff1feddddddddddddddd
+    ddddddde1111111112111111eddddddddddddddd
+    ddddddde1ffff1ff121fffffeddddddddddddddd
+    ddddddde11f1111112111111eddddddddddddddd
+    ddddddde1111f111121f1ff1eddddddddddddddd
+    ddddddde1ffff1ff121f11eedddddddddddddddd
+    ddddddde11111111121f1edddddddddddddddddd
+    ddddddde1111111112eeeddddddddddddddddddd
+    ddddddddeeeeeeeee2dddddddddddddddddddddd
+    ddddddddddddddddd2dddddddddddddddddddddd
+    ddddddddddddddddd2dd2ddddddddddddddddddd
+    dddddddddddddddddd2d2ddddddddddddddddddd
+    ddddddddddddddddddd2dddddddddddddddddddd
+    `)
