@@ -20,7 +20,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
     } else if (otherSprite == Story2 && controller.A.isPressed()) {
         writeStroy("I will tell you about countries.there is 199 in total.each country has a special city called capital.countries are in continents.the continents are asia,europe,africa,oceania,north america and south america.there is also 3 more continents that are not continents.they are balkans,caribbean and centeral america.THE END.")
     } else if (otherSprite == Story3 && controller.A.isPressed()) {
-        writeStroy("kind is inportant.kind is good.")
+        writeStroy("kind is inportant.kind is good.kind is what humans do.kind makes people happy.do not say bad words, just say good words.do good actions.kindness spreds everywhere.kind is letting people join in.THE END.")
     } else {
     	
     }
