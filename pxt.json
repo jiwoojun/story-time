@@ -2,10 +2,7 @@
     "name": "story time!",
     "description": "",
     "dependencies": {
-        "device": "*",
-        "tilemaps": "github:microsoft/pxt-tilemaps#v1.10.0",
-        "story": "github:riknoll/arcade-story#master",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "device": "*"
     },
     "files": [
         "main.blocks",
@@ -21,7 +18,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.3.42",
+        "target": "1.3.44",
         "targetId": "arcade"
     },
     "supportedTargets": [
