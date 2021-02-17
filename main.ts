@@ -21,11 +21,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Story, function (sprite, otherSp
         writeStroy("I will tell you about countries.there is 199 in total.each country has a special city called capital.countries are in continents.the continents are asia,europe,africa,oceania,north america and south america.there is also 3 more continents that are not continents.they are balkans,caribbean and centeral america.THE END.")
     } else if (otherSprite == Story3 && controller.A.isPressed()) {
         writeStroy("kind is inportant.kind is good.kind is what humans do.kind makes people happy.do not say bad words, just say good words.do good actions.kindness spreds everywhere.kind is letting people join in.THE END.")
+    } else if (otherSprite == Story4 && controller.A.isPressed()) {
+        writeStroy("life in africa is bad.you have to drink dirty drinks")
+    } else if (otherSprite == Story5 && controller.A.isPressed()) {
+        writeStroy("abc")
     } else {
-    	
+        writeStroy("abc")
     }
 })
 let script2: story.Script = null
+let Story5: Sprite = null
+let Story4: Sprite = null
 let Story3: Sprite = null
 let Story2: Sprite = null
 let Story1: Sprite = null
@@ -239,8 +245,8 @@ img`
 Story1 = sprites.create(option_list[0], SpriteKind.Story)
 Story2 = sprites.create(option_list[1], SpriteKind.Story)
 Story3 = sprites.create(option_list[2], SpriteKind.Story)
-let Story4 = sprites.create(option_list[3], SpriteKind.Story)
-let Story5 = sprites.create(option_list[4], SpriteKind.Story)
+Story4 = sprites.create(option_list[3], SpriteKind.Story)
+Story5 = sprites.create(option_list[4], SpriteKind.Story)
 let Story6 = sprites.create(option_list[5], SpriteKind.Story)
 Story1.setPosition(16, 16)
 Story2.setPosition(49, 16)
